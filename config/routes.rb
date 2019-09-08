@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#index'
-  config.secret_key = '-- secret key --'
   resources :courses, only: [:index, :show]
   resources :lessons, only: [:show]
   namespace :instructor do
