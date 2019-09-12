@@ -75,6 +75,7 @@ gem "fog-aws"
 gem 'stripe'
 gem "stripe_event"
 gem 'ranked-model'
+gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
