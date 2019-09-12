@@ -19,8 +19,7 @@
       <br />
       <br />
       
-      <% if current_user %>
-      <% if current_user.enrolled_in?(@course) %>
+      <% if current_user && current_user.enrolled_in?(@course) %>
         <h3 class="badge badge-info">You Are Enrolled!</h3>
       <% else %>
          <% if @course.free? %>
@@ -38,9 +37,6 @@
           <% end %>
         <% end %>
       <% end %>
-     <% else %>
-      <h3 class="badge badge-info">Sign In to Enroll!</h3>
-     <% end %>
     </div>
 
     <div class="col-sm-8 col-12">
@@ -57,7 +53,7 @@
           <%= section.title %>
         </h3>
         <div class="row">
-        <% section.lessons.rank(:row_order).each do |lesson| %>
+        <% section.lessons.each do |lesson| %>
          <div class="col-12 col-sm-6">
           <div class="lesson text-center">
             <br />
